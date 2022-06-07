@@ -3,29 +3,9 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
+import Mailchimp from "../components/Mailchimp";
 import styles from "./index.module.css";
-
-function OldHomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
-          >
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
 
 function HomepageHeader() {
   return (
@@ -60,7 +40,7 @@ function HomepageHeader() {
   );
 }
 
-function HomepageFeatureVisualToolkit() {
+function FeatureVisualToolkit() {
   return (
     <section className="homepage__feature section-light">
       <div className="container">
@@ -84,7 +64,7 @@ function HomepageFeatureVisualToolkit() {
   );
 }
 
-function HomepageFeatureMachineLearning() {
+function FeatureMachineLearning() {
   return (
     <section className="homepage__feature section-light">
       <div className="container">
@@ -108,7 +88,7 @@ function HomepageFeatureMachineLearning() {
   );
 }
 
-function HomepageFeatureFast() {
+function FeatureFast() {
   return (
     <section className="homepage__feature section-light">
       <div className="container">
@@ -134,15 +114,72 @@ function HomepageFeatureFast() {
   );
 }
 
+function AlgorithmicGaze() {
+  return (
+    <section className="homepage__feature section-dark">
+      <div className="container flex flex-col items-center">
+        <figure className="mb-5">
+          <img
+            src="/img/homepage/hunger-of-the-pine-cover.jpeg"
+            alt="Hunger of the Pine project"
+          />
+          <figcaption>
+            Hunger of the Pine. Kristof Vrancken and Lieven Menschaert (2021)
+          </figcaption>
+        </figure>
+        <p className="text-lg max-w-40 text-center">
+          Figment is developed as part of{" "}
+          <a
+            class="color-reverse"
+            href="https://algorithmicgaze.com"
+            target="_blank"
+          >
+            The Algorithmic Gaze
+          </a>
+          , a research project exploring the impact of AI through interesting
+          projects and democratizing the tools of machine learning.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function Newsletter() {
+  return (
+    <section className="homepage__feature section-light">
+      <div className="container flex flex-col items-center">
+        <p className="text-lg max-w-40 text-center">
+          Sign up for the Figment mailing list to get all the latest news about
+          our software and other projects.
+        </p>
+        <Mailchimp
+          action="https://figmentapp.us19.list-manage.com/subscribe/post?u=baf8a54a2a72cf8040e710a96&amp;id=9d18a1a553"
+          className="mailchimp"
+          fields={[
+            {
+              name: "EMAIL",
+              placeholder: "Email",
+              type: "email",
+              required: true,
+            },
+          ]}
+        />
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout title="Figment" description="Visual toolkit for creative AI">
       <HomepageHeader />
       <main>
-        <HomepageFeatureVisualToolkit />
-        <HomepageFeatureMachineLearning />
-        <HomepageFeatureFast />
+        <FeatureVisualToolkit />
+        <FeatureMachineLearning />
+        <FeatureFast />
+        <AlgorithmicGaze />
+        <Newsletter />
       </main>
     </Layout>
   );
