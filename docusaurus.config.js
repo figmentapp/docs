@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Figment",
-  tagline: "Making Creative AI Easier",
+  tagline: "Visual Coding for Creative AI",
   url: "https://figmentapp.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -65,9 +65,9 @@ const config = {
           },
           {
             type: "doc",
-            docId: "tutorial/getting-started",
+            docId: "tutorials/index",
             position: "left",
-            label: "Tutorial",
+            label: "Tutorials",
           },
           {
             href: "https://github.com/figmentapp/docs",
