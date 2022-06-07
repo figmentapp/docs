@@ -36,8 +36,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/figmentapp/docs/tree/main/",
         },
         blog: false,
         theme: {
@@ -58,16 +57,21 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "nodes/index",
+            to: "download",
             position: "left",
-            label: "Nodes",
+            label: "Download",
           },
           {
             type: "doc",
             docId: "tutorials/index",
             position: "left",
-            label: "Tutorials",
+            label: "Tutorial",
+          },
+          {
+            type: "doc",
+            docId: "nodes/index",
+            position: "left",
+            label: "Reference",
           },
           {
             href: "https://github.com/figmentapp/docs",
@@ -80,11 +84,15 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
+            title: "Documentation",
             items: [
               {
                 label: "Tutorial",
-                to: "/docs/intro",
+                to: "/docs/tutorials",
+              },
+              {
+                label: "Reference",
+                to: "/docs/nodes",
               },
             ],
           },
@@ -93,7 +101,7 @@ const config = {
             items: [
               {
                 label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                href: "https://stackoverflow.com/questions/tagged/figment",
               },
               {
                 label: "Discord",
@@ -119,7 +127,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Figment. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Figment.`,
       },
       prism: {
         theme: lightCodeTheme,
