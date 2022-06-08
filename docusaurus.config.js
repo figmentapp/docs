@@ -105,11 +105,11 @@ const config = {
               },
               {
                 label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                href: "https://discordapp.com/invite/figmentapp",
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                href: "https://twitter.com/figmentapp",
               },
             ],
           },
@@ -117,12 +117,8 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                label: "Documentation GitHub",
+                href: "https://github.com/figmentapp/docs",
               },
             ],
           },
