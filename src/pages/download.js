@@ -3,17 +3,24 @@ import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 function DownloadHeader() {
-  const platform = window.navigator.platform;
+  let browserPlatform;
   let platformName;
   let version = "0.3.8";
   let downloadUrl;
-  if (platform === "MacIntel") {
+
+  if (typeof window !== "undefined") {
+    browserPlatform = window.navigator.platform;
+  } else {
+    browserPlatform = "Windows";
+  }
+
+  if (browserPlatform === "MacIntel") {
     platformName = "Mac";
     downloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment-${version}-universal.dmg`;
-  } else if (platform.startsWith("Win")) {
+  } else if (browserPlatform.startsWith("Win")) {
     platformName = "Windows";
     downloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment%20Setup%20${version}.exe`;
-  } else if (platform.startsWith("Linux")) {
+  } else if (browserPlatform.startsWith("Linux")) {
     platformName = "Linux";
     downloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment-${version}-x86_64.AppImage`;
   }
