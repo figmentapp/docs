@@ -27,7 +27,7 @@ This is a list of all the nodes in Figment:
 
 ### Filters / Effects
 
-The image of the example courtesy of [John Mark Arnold](https://unsplash.com/@johnmarkarnold).
+The images of the examples courtesy of [John Mark Arnold](https://unsplash.com/@johnmarkarnold) and [Sergey Shmidt](https://unsplash.com/@monstercritic).
 
 - [Blur](./blur): Blur an input image.
 - [Border](./border): Generate a border around the image.
