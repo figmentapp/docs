@@ -1,6 +1,6 @@
 # Exporting
 
-Use `File > Export` to export a sequence of images to disk. The export dialog will choose the [Out node](/nodes/out) by default.
+Use `File > Export` to export a sequence of images to disk. The export dialog will choose the [Out node](/docs/nodes/out) by default.
 
 ## Frame rate
 

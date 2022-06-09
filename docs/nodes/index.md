@@ -12,6 +12,7 @@ This is a list of all the nodes in Figment:
 ### Creating / Loading Images
 
 - [Constant](./constant): Render a constant color.
+- [Fetch Image](./fetch-image): Fetch an image from the internet.
 - [Load Image](./load-image): Load an image from a file.
 - [Load Image Folder](./load-image-folder): Load a folder of images.
 - [Load Movie](./load-movie): Load a movie file.

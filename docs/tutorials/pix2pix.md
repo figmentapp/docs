@@ -20,7 +20,7 @@ This idea was actually developed by [Alexandra Fraser](https://www.alexandrafras
 
 ## Acquiring the data
 
-We have a folder of data prepared that you can download. These are 5,000 images downloaded from the _This Person Does Not Exist_ website. However, we can also do this using a [Download Image node](/nodes/download-image). In the case of this website, we can fetch the same URL repeatedly and get a different image every time.
+We have a folder of data prepared that you can download. These are 5,000 images downloaded from the _This Person Does Not Exist_ website. However, we can also do this using a [Fetch Image node](/docs/nodes/fetch-image). In the case of this website, we can fetch the same URL repeatedly and get a different image every time.
 
 Download the list of images from the website:
 
@@ -32,24 +32,24 @@ Create a new project folder, e.g. on your desktop. Open Figment and immediately 
 
 Put your images folder in the project folder as well.
 
-In your new project, delete all nodes except for the [Out node](/nodes/out) at the end.
+In your new project, delete all nodes except for the [Out node](/docs/nodes/out) at the end.
 
-Create a [Load Image Folder node](/nodes/load-image-folder), click the "Choose" button next to the folder, and select the images folder. The images should now be "animating":
+Create a [Load Image Folder node](/docs/nodes/load-image-folder), click the "Choose" button next to the folder, and select the images folder. The images should now be "animating":
 
 TODO animation of the Load Image Folder
 
 !!! note
 
-    You could also use the [webcam node](/nodes/webcam) to generate an artificial, creepy version of yourself!
+    You could also use the [webcam node](/docs/nodes/webcam-image) to generate an artificial, creepy version of yourself!
 
-The PIX2PIX algorithm requires the input to be square. We're going to be using `512x512` images, so we'll use [Resize node](/nodes/resize) to mold them into shape.
+The PIX2PIX algorithm requires the input to be square. We're going to be using `512x512` images, so we'll use [Resize node](/docs/nodes/resize) to mold them into shape.
 
 - Create a `Resize` node.
 - Set the width and height both to `512`.
 - Set the fit mode to `cover`.
 - Connect the output of the `Load Image Folder` node to the input of the `Resize` node.
 
-Since these are faces, we want to use a face detection algorithm. The [Detect Faces node](/nodes/detect-faces) works well here. It uses [Google's MediaPipe Face Mesh](https://google.github.io/mediapipe/solutions/face_mesh) to detect face landmarks. Set it up to draw the face mesh.
+Since these are faces, we want to use a face detection algorithm. The [Detect Faces node](/docs/nodes/detect-faces) works well here. It uses [Google's MediaPipe Face Mesh](https://google.github.io/mediapipe/solutions/face_mesh) to detect face landmarks. Set it up to draw the face mesh.
 
 TODO animation of the face mesh
 
@@ -58,7 +58,7 @@ TODO animation of the face mesh
 - Turn on _Draw Tesselation_.
 - Connect the output of `Resize` to the input of `Detect Faces`.
 
-Our PIX2PIX implementation requires the two images side-by-side. We'll do that with a [Stack node](/nodes/stack). Note that our final size should be `1024x512`, so we'll take the output of `Resize` and `Detect Faces`, which are both `512x512`.
+Our PIX2PIX implementation requires the two images side-by-side. We'll do that with a [Stack node](/docs/nodes/stack). Note that our final size should be `1024x512`, so we'll take the output of `Resize` and `Detect Faces`, which are both `512x512`.
 
 - Create a `Stack` node.
 - Connect the output of `Resize` to the first input of `Stack`.
