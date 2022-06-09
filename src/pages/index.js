@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 
-import Mailchimp from "../components/Mailchimp";
+import Mailchimp from "../components/mailchimp";
 import styles from "./index.module.css";
 
 function HomepageHeader() {
