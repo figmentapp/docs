@@ -100,16 +100,8 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/figment",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/figmentapp",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/figmentapp",
+                label: "Forum coming soon!",
+                href: "#",
               },
             ],
           },
