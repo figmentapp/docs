@@ -9,3 +9,7 @@ This node mirrors an input image over an axis.
 - **Scale X** Sets the scale amount of the width of the canvas.
 - **Scale Y** Sets the scale amount of the height of the canvas.
 - **Rotate** Sets the angle for rotating the canvas. Angle is set as degrees so values go from `0.0` or `360.0`
+
+## Example
+
+<img src="/img/nodes/transform.jpg" alt="Figment transform node example"/>

@@ -27,10 +27,12 @@ This is a list of all the nodes in Figment:
 
 ### Filters / Effects
 
+The image of the example courtesy of [John Mark Arnold](https://unsplash.com/@johnmarkarnold).
+
 - [Blur](./blur): Blur an input image.
 - [Border](./border): Generate a border around the image.
 - [Canny](./canny): Canny edge detection on input image.
-- [Mask Circle](./mask-circle): Draw a circular mask of an image or color.
+- [Mask Ellipse](./mask-ellipse): Draw a circular mask of an image or color.
 - [Emboss](./emboss): Emboss convolution on an input image.
 - [Grayscale](./grayscale): Convert the input image to grayscale.
 - [Invert](./invert): Invert the colors of input image.
