@@ -1,4 +1,4 @@
-# Composite
+# Stack
 
 The node stacks two images horizontally or vertically. It needs two images as input.
 
