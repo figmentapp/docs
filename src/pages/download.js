@@ -84,7 +84,7 @@ function NextSteps() {
           </p>
           <a
             className="button button--primary"
-            href="https://www.youtube.com/embed/J4mnzP7nP0Y"
+            href="https://www.youtube.com/watch?v=J4mnzP7nP0Y"
           >
             YouTube Tutorial
           </a>
