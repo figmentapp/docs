@@ -20,9 +20,23 @@ function DownloadHeader() {
   } else if (browserPlatform.startsWith("Win")) {
     platformName = "Windows";
     downloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment%20Setup%20${version}.exe`;
-  } else if (browserPlatform.startsWith("Linux")) {
-    platformName = "Linux";
-    downloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment-${version}-x86_64.AppImage`;
+  }
+
+  if (!downloadUrl) {
+    return (
+      <header className="hero hero--primary">
+        <div className="container text-center">
+          <h1 className="text-2xl">Download Figment</h1>
+          <p>Figment is currently available for Mac and Windows.</p>
+          <p className="text-sm">
+            Version {version} —{" "}
+            <a className="color-reverse" href="/release-notes">
+              What's New
+            </a>
+          </p>
+        </div>
+      </header>
+    );
   }
 
   return (
