@@ -40,7 +40,7 @@ The image of the example courtesy of [John Mark Arnold](https://unsplash.com/@jo
 - [Levels](./levels): Change the brightness/contrast/saturation of an image.
 - [Lookup](./lookup): Map the colors of one image to another image.
 - [Mirror](./mirror): Mirror the input image over a specific axis.
-- [Modcolor](./modcolor): Adjust the colors of the input image.
+- [Modulate Color](./modulate-color): Adjust the colors of the input image.
 - [Pixelate](./pixelate): Pixelate the input image.
 - [Reduce Color](./reduce-color): Reduce the amount of colors of input image.
 - [Sharpen](./sharpen): Sharpen an input image
