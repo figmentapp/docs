@@ -5,3 +5,7 @@ This node maps the colors of an image to the colors of another image. It needs t
 ## Parameters
 
 - **Method** Sets the method of mapping. Values are `luminance`, `red`, `green`, `blue` and `alpha`.
+
+## Example
+
+<img src="/img/nodes/lookup.jpg" alt="Figment lookup node example"/>
