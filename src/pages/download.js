@@ -5,7 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 function DownloadHeader() {
   let browserPlatform;
   let platformName;
-  let version = "0.3.8";
+  let version = "0.3.10";
   let downloadUrl;
 
   if (typeof window !== "undefined") {
