@@ -7,45 +7,21 @@ function DownloadHeader() {
   let platformName;
   let version = "0.3.10";
   let downloadUrl;
-
-  if (typeof window !== "undefined") {
-    browserPlatform = window.navigator.platform;
-  } else {
-    browserPlatform = "Windows";
-  }
-
-  if (browserPlatform === "MacIntel") {
-    platformName = "Mac";
-    downloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment-${version}-universal.dmg`;
-  } else if (browserPlatform.startsWith("Win")) {
-    platformName = "Windows";
-    downloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment%20Setup%20${version}.exe`;
-  }
-
-  if (!downloadUrl) {
-    return (
-      <header className="hero hero--primary">
-        <div className="container text-center">
-          <h1 className="text-2xl">Download Figment</h1>
-          <p>Figment is currently available for Mac and Windows.</p>
-          <p className="text-sm">
-            Version {version} —{" "}
-            <a className="color-reverse" href="/release-notes">
-              What's New
-            </a>
-          </p>
-        </div>
-      </header>
-    );
-  }
+  const macDownloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment-${version}-universal.dmg`;
+  const winDownloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment%20Setup%20${version}.exe`;
 
   return (
     <header className="hero hero--primary">
       <div className="container text-center">
         <h1 className="text-2xl">Download Figment</h1>
         <div className="download__wrapper">
-          <a className="download__button" href={downloadUrl}>
-            Download Figment for {platformName}
+          <a className="download__button" href={macDownloadUrl}>
+            Download Figment for Mac
+          </a>
+        </div>
+        <div className="download__wrapper">
+          <a className="download__button" href={winDownloadUrl}>
+            Download Figment for Windows
           </a>
         </div>
         <p className="text-sm">
