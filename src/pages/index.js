@@ -72,8 +72,8 @@ function FeatureMachineLearning() {
           <div className="col col-6">
             <h2 class="text-2xl">Machine Learning built in</h2>
             <p className="text-lg">
-              Load, transform and manipulate images using an intuitive visual
-              interface.
+              Use MediaPipe for pose or face detection, or bring your own
+              Tensorflow.js models and run them in realtime.
             </p>
           </div>
           <div className="col col-6">
