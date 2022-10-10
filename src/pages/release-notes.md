@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 0.3.12 (2022-10-10)
+
+- Fix export image bugs
+- Image Folder node syncs up with image export
+
 ## Version 0.3.11 (2022-10-10)
 
 - Add "Save Image" node.
