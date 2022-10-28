@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 0.3.13 (2022-10-28)
+
+- New image blending modes in the composite node
+- Add new mask image node
+
 ## Version 0.3.12 (2022-10-10)
 
 - Fix export image bugs
