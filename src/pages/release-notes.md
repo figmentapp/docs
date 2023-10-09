@@ -1,5 +1,15 @@
 # Release Notes
 
+## Version 0.4.0 (2023-10-06)
+
+- Add a bunch of new nodes: gaussion blur, barrel distortion, cartoon image, Brannan filter, vignette, wrap, sepia, Instagram filters, denoise, LoG edges, glitch, INMS, RGB color clustering, Gray color clustering, color keying, glowing edges, center around gray, ASCII, screen distortion, chromatic abberation, solarize, heatmap
+- Add more operations to composite node (hardmix, difference, exclusion, subtract, divide).
+Composite node now performs proper alpha blending.
+- Hide cursor in fullscreen mode.
+- Add a conditional image node that can switch between multiple images.
+- Add conditional outputs to pose and hand detection nodes.
+- Upgrade to latest version of TensorFlow.js., significantly improving performance.
+
 ## Version 0.3.13 (2022-10-28)
 
 - New image blending modes in the composite node
