@@ -1,5 +1,13 @@
 # Release Notes
 
+## Version 0.5.0 (2024-03-05)
+
+- Add expression support. This introduces an internal change to the file format (version 2). Older files will be automatically converted to the new format.
+- Add a built-in OSC server.
+- Add better fonts on Windows.
+- Fix parameter splitter.
+- Don't maximize Figment on load.
+
 ## Version 0.4.1 (2024-02-28)
 
 - Add stats option to "out" node.
@@ -9,7 +17,7 @@
 
 - Add a bunch of new nodes: gaussion blur, barrel distortion, cartoon image, Brannan filter, vignette, wrap, sepia, Instagram filters, denoise, LoG edges, glitch, INMS, RGB color clustering, Gray color clustering, color keying, glowing edges, center around gray, ASCII, screen distortion, chromatic abberation, solarize, heatmap
 - Add more operations to composite node (hardmix, difference, exclusion, subtract, divide).
-Composite node now performs proper alpha blending.
+- Composite node now performs proper alpha blending.
 - Hide cursor in fullscreen mode.
 - Add a conditional image node that can switch between multiple images.
 - Add conditional outputs to pose and hand detection nodes.
