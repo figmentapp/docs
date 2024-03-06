@@ -14,7 +14,7 @@ This takes the current frame (an ever-increasing value) and divides it by 10, to
 
 To use an expression, go to the parameter you want to change and click on the three dots, and choose "Edit Expression". The text field will turn green, indicating that it accepts an expression.
 
-<figure><img src="/img/tutorials/expressions/simple-expression.png" alt="A simple expression on the rotate parameter"/><figcaption>A simple expression on the rotate parameter</figcaption></figure>
+<figure><img src="/img/expressions/simple-expression.png" alt="A simple expression on the rotate parameter"/><figcaption>A simple expression on the rotate parameter</figcaption></figure>
 
 ## Built-in Functions
 
@@ -44,7 +44,7 @@ A number of handy functions are built in to Figment
 
 ### Time Functions
 
-- `pingPong(min, max, period=1, time=$TIME)` : Returns a value that oscillates between min and max over a period of time.
+- `pingPong(min, max, period=1, type="smooth", time=$TIME)` : Returns a value that oscillates between min and max over a period of time. The different types are `"smooth"` (sine wave), `"linear"` (sawtooth wave), or `"step"` (square wave).
 
 ### Open Sound Control
 
