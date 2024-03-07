@@ -15,6 +15,9 @@
 ## Connecting
 
 - Connect the output of a node to the input of another node.
+- To disconnect, drag from the input node to the output node.
+
+<video muted autoPlay style={{width: '100%'}} src="/img/tutorials/getting-started/figment-connect-disconnect.mp4"></video>
 
 ## Exporting
 
