@@ -37,7 +37,7 @@ function DownloadHeader() {
 
 function NextSteps() {
   return (
-    <section className="container text-center py-5">
+    <section className="container py-5 text-center">
       <h2 className="text-2xl">Next Steps</h2>
       <p>
         Thanks for downloading Figment! Here are some things you can do next:
@@ -49,7 +49,10 @@ function NextSteps() {
             Learn how to use Figment to create, share, and collaborate on
             projects.
           </p>
-          <a className="button button--primary" href="/docs/tutorials">
+          <a
+            className="button button--primary"
+            href="/docs/tutorials/getting-started"
+          >
             Getting Started
           </a>
         </div>
@@ -69,12 +72,12 @@ function NextSteps() {
         <div className="col col-4 tile">
           <h3 className="text-lg">PIX2PIX Deep Dive</h3>
           <p className="text-sm">
-            Watch a YouTube introduction into Figment and PIX2PIX with
-            Paperspace.
+            Watch how to train a machine learning model from scratch using
+            Figment and Google Colab.
           </p>
           <a
             className="button button--primary"
-            href="https://www.youtube.com/watch?v=J4mnzP7nP0Y"
+            href="https://www.youtube.com/watch?v=CbB7kAb0UDM"
           >
             YouTube Tutorial
           </a>
