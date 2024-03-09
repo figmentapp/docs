@@ -74,7 +74,7 @@ const config = {
             label: "Reference",
           },
           {
-            href: "https://github.com/figmentapp/figment",
+            href: "https://github.com/figmentapp",
             label: "GitHub",
             position: "right",
           },
@@ -109,8 +109,8 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Documentation GitHub",
-                href: "https://github.com/figmentapp/docs",
+                label: "GitHub",
+                href: "https://github.com/figmentapp",
               },
             ],
           },
