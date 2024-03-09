@@ -3,7 +3,7 @@
 Watch the YouTube tutorial to get started with Figment:
 
 <div class="video-wrapper">
-  <iframe  src="https://www.youtube-nocookie.com/embed/tWAMzHq9dPc?si=yDg5g8O6hXC1oiky" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe  src="https://www.youtube-nocookie.com/embed/tWAMzHq9dPc?si=yDg5g8O6hXC1oiky&list=PLJegHlOw98OlCPFTEgKxcVHPwW_EYLOyu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ## Creating new nodes

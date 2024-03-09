@@ -12,11 +12,19 @@ The best input data is _structurally similar_ to the input data, that is, there 
 
 The _trick_ to making the training data is doing the _opposite_ transformation of what we're trying to acquire. So, as an example, to convert black and white image to color images, we're using existing color images and _removing_ the color information, then letting PIX2PIX learn the color mapping.
 
+## Video Tutorial
+
+<div class="video-wrapper">
+  <iframe  src="https://www.youtube-nocookie.com/embed/CbB7kAb0UDM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 ## What we'll make
 
 We're making a face generator that's built on artificial faces, using [This Person Does Not Exist](https://thispersondoesnotexist.com). In a way, we're creating a second-generation AI, based on existing AI.
 
 This idea was actually developed by [Alexandra Fraser](https://www.alexandrafraser.eu) in her project [Maureen](https://algorithmicgaze.com/projects/maureen/).
+
+![Maureen by Alexandra Fraser](/img/tutorials/pix2pix/maureen.jpg)
 
 ## Acquiring the data
 
