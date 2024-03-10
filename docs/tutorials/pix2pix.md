@@ -28,11 +28,15 @@ This idea was actually developed by [Alexandra Fraser](https://www.alexandrafras
 
 ## Acquiring the data
 
-We have a folder of data prepared that you can download. These are 5,000 images downloaded from the _This Person Does Not Exist_ website. However, we can also do this using a [Fetch Image node](/docs/nodes/fetch-image). In the case of this website, we can fetch the same URL repeatedly and get a different image every time.
+We have a folder of data prepared that you can download. These are 5,000 images downloaded from the _This Person Does Not Exist_ website. Download the ZIP file here: [does-not-exist.zip](https://figmentapp.s3.amazonaws.com/datasets/does-not-exist.zip)
 
-Download the list of images from the website:
+However, we can also do this using a [Fetch Image node](/docs/nodes/fetch-image). In the case of this website, we can fetch the same URL repeatedly and get a different image every time:
 
-**TODO add URL**
+- Create a **Fetch Image** Node. Set the url to `https://thispersondoesnotexist.com/`, the "refresh" on and the refresh time to 1 second.
+- Create a **Save Image** Node. Choose the folder.
+- Select File > Render and render out as much images as you want. Set the framerate to 1 (same as the refresh time).
+
+<figure><img src="/img/tutorials/pix2pix/fetch-image.png" alt="Screenshot of Fetch Image setup"/><figcaption>Screenshot of Fetch Image setup</figcaption></figure>
 
 ## Setting up Figment
 
@@ -40,15 +44,20 @@ Create a new project folder, e.g. on your desktop. Open Figment and immediately 
 
 Put your images folder in the project folder as well.
 
-In your new project, delete all nodes except for the [Out node](/docs/nodes/out) at the end.
+In your new project, delete all nodes. We're going to start from scratch.
 
 Create a [Load Image Folder node](/docs/nodes/load-image-folder), click the "Choose" button next to the folder, and select the images folder. The images should now be "animating":
 
-TODO animation of the Load Image Folder
+<video autoPlay muted loop src="/img/tutorials/pix2pix/load-image-folder.mp4" style={{width: "100%"}}></video>
 
-!!! note
+<br/>
+<br/>
 
-    You could also use the [webcam node](/docs/nodes/webcam-image) to generate an artificial, creepy version of yourself!
+:::tip
+
+You could also use the [webcam node](/docs/nodes/webcam-image) to generate an artificial, creepy version of yourself!
+
+:::
 
 The PIX2PIX algorithm requires the input to be square. We're going to be using `512x512` images, so we'll use [Resize node](/docs/nodes/resize) to mold them into shape.
 
@@ -59,12 +68,12 @@ The PIX2PIX algorithm requires the input to be square. We're going to be using `
 
 Since these are faces, we want to use a face detection algorithm. The [Detect Faces node](/docs/nodes/detect-faces) works well here. It uses [Google's MediaPipe Face Mesh](https://google.github.io/mediapipe/solutions/face_mesh) to detect face landmarks. Set it up to draw the face mesh.
 
-TODO animation of the face mesh
-
 - Create a `Detect Faces` node.
 - Turn off _Draw Contours_
 - Turn on _Draw Tesselation_.
 - Connect the output of `Resize` to the input of `Detect Faces`.
+
+<figure><img src="/img/tutorials/pix2pix/detect-faces.png" alt="Screenshot of Detect Faces setup"/><figcaption>Screenshot of Detect Faces setup</figcaption></figure>
 
 Our PIX2PIX implementation requires the two images side-by-side. We'll do that with a [Stack node](/docs/nodes/stack). Note that our final size should be `1024x512`, so we'll take the output of `Resize` and `Detect Faces`, which are both `512x512`.
 
@@ -74,13 +83,20 @@ Our PIX2PIX implementation requires the two images side-by-side. We'll do that w
 
 The finishing touch:
 
-- Connect the output of `Stack` to the `Out` node.
+- Create a "Save Image" node.
+- Set the folder to save to.
+- In template, use `image-#####.jpg` to save the images with a number.
+- Connect the output of `Stack` to the `Save Image` node.
 
 We're ready to export. We'll export 5000 frames (as many as we have input images) to an "input" folder.
 
-!!! note
+:::info
 
-    Why is the exported folder called "input"? It's because it's the **input** for the next step, which is the PIX2PIX machine learning algorithm.
+Why is the exported folder called "input"? It's because it's the **input** for the next step, which is the PIX2PIX machine learning algorithm.
+
+:::
+
+<figure><img src="/img/tutorials/pix2pix/prepare.png" alt="Figment Prepare Project Setup"/><figcaption>Screenshot of Figment with the prepared pipeline</figcaption></figure>
 
 ## Training the model with Paperspace
 
@@ -96,9 +112,11 @@ First, upload the data. Switch to the data tab:
 
 Choose "Add" to create a new dataset. I called mine `does-not-exist`. Then, upload the 5,000 images you prepared.
 
-!!! note
+:::info
 
-    Data uploaded this way will be available in the `/storage` directory in a Paperspace notebook.
+Data uploaded this way will be available in the `/storage` directory in a Paperspace notebook.
+
+:::
 
 Go to the Notebook tab and create a new notebook. Choose "Tensorflow". Select a GPU machine (you can choose a free one, though it will take a while for results to appear).
 
@@ -161,9 +179,11 @@ Open `pix2pix_tfjs.ipynb`. In this script, make sure the paths are set correctly
 
 ![Paths for tfjs script](/img/tutorials/pix2pix/gradient-tfjs-paths.jpg)
 
-!!! note
+:::info
 
-    If you see the output mention something about "out of memory", it means you're training script is still running. Make sure to shut it down with the "trash" icon under "Kernel Sessions".
+If you see the output mention something about "out of memory", it means you're training script is still running. Make sure to shut it down with the "trash" icon under "Kernel Sessions".
+
+:::
 
 ### Downloading the model
 
