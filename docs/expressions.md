@@ -1,5 +1,11 @@
 # Using Expressions
 
+<div class="video-wrapper">
+  <iframe  src="https://www.youtube-nocookie.com/embed/Zo2Oev1pz10" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<br/>
+
 All values in Figment also support expressions. These are tiny snippets of code that allow you to change parameters dynamically. For example, you can use expressions to make a value change over time or react to external input via OSC.
 
 Expressions use a JavaScript-like syntax. A basic expression looks like this:
