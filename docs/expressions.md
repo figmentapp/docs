@@ -16,9 +16,17 @@ To use an expression, go to the parameter you want to change and click on the th
 
 <figure><img src="/img/expressions/simple-expression.png" alt="A simple expression on the rotate parameter"/><figcaption>A simple expression on the rotate parameter</figcaption></figure>
 
+## Built-in Variables
+
+Figment provides a number of built-in variables that you can use in your expressions:
+
+- `$TIME`: The current time in seconds
+- `$FRAME`: The current frame
+- `$NOW`: The current absolute time, in milliseconds
+
 ## Built-in Functions
 
-A number of handy functions are built in to Figment
+A number of handy functions are built in to Figment as well:
 
 ### Math Functions
 
