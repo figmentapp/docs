@@ -1,6 +1,6 @@
 # Image to Image
 
-Run a PIX2PIX image to image model.
+Run a PIX2PIX image to image model. Note that there is also a ONNX version of this node: [ONNX Image Model](onnx-image-model.md).
 
 This currently only runs 512x512 image models. We're working on a version that supports smaller image models as well.
 
