@@ -1,6 +1,10 @@
 # Transform
 
-This node mirrors an input image over an axis.
+This node can be used to apply transformations to the input image, meaning it can translate, scale, or rotate the image.
+
+:::tip
+To flip an image horizontally, set the `Scale X` parameter to `-1.0`.<br/>To flip an image vertically, set the `Scale Y` parameter to `-1.0`.
+:::
 
 ## Parameters
 
