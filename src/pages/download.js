@@ -5,7 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 function DownloadHeader() {
   let browserPlatform;
   let platformName;
-  let version = "0.5.3";
+  let version = "0.5.4";
   let downloadUrl;
   const macDownloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment-${version}-universal.dmg`;
   const winDownloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment%20Setup%20${version}.exe`;
