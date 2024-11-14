@@ -100,8 +100,8 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Forum coming soon!",
-                href: "#",
+                label: "Forum",
+                href: "https://github.com/figmentapp/figment/discussions",
               },
             ],
           },
