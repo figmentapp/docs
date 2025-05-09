@@ -52,7 +52,7 @@ function FeatureVisualToolkit() {
             />
           </div>
           <div className="col col-6">
-            <h2 class="text-2xl">A visual toolkit for images</h2>
+            <h2 className="text-2xl">A visual toolkit for images</h2>
             <p className="text-lg">
               Load, transform and manipulate images using an intuitive visual
               interface.
@@ -70,7 +70,7 @@ function FeatureMachineLearning() {
       <div className="container">
         <div className="row align-center">
           <div className="col col-6">
-            <h2 class="text-2xl">Machine Learning built in</h2>
+            <h2 className="text-2xl">Machine Learning built in</h2>
             <p className="text-lg">
               Use MediaPipe for pose or face detection, or bring your own
               Tensorflow.js models and run them in realtime.
@@ -95,13 +95,13 @@ function FeatureFast() {
         <div className="row align-center">
           <div className="col col-6 text-center">
             <img
-              class="image-w50"
+              className="image-w50"
               src="/img/homepage/logos.svg"
               alt="Screenshot of the Figment app demonstrating face detection"
             />
           </div>
           <div className="col col-6">
-            <h2 class="text-2xl">Fast in many ways</h2>
+            <h2 className="text-2xl">Fast in many ways</h2>
             <p className="text-lg">
               Not only is Figment easy to get started, but all functionality is
               built as hardware accelerated image filters, fully utilizing the
@@ -130,7 +130,7 @@ function AlgorithmicGaze() {
         <p className="text-lg max-w-40 text-center">
           Figment is developed as part of{" "}
           <a
-            class="color-reverse"
+            className="color-reverse"
             href="https://algorithmicgaze.com"
             target="_blank"
           >
@@ -152,18 +152,7 @@ function Newsletter() {
           Sign up for the Figment mailing list to get all the latest news about
           our software and other projects.
         </p>
-        <Mailchimp
-          action="https://figmentapp.us19.list-manage.com/subscribe/post?u=baf8a54a2a72cf8040e710a96&amp;id=9d18a1a553"
-          className="mailchimp"
-          fields={[
-            {
-              name: "EMAIL",
-              placeholder: "Email",
-              type: "email",
-              required: true,
-            },
-          ]}
-        />
+        <Mailchimp />
       </div>
     </section>
   );
