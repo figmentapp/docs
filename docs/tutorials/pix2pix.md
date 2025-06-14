@@ -204,4 +204,5 @@ Here's an example with a model that's trained for a number of days:
 
 <figure>
 <video loop="true" autoplay="true" muted="true" src="https://tag-site.s3-eu-central-1.amazonaws.com/maureen/maureen-2.mp4" width="100%"/>
-<figcaption>Maureen and a realtime face, side-by-side.</figcaption></figure>
+<figcaption>Maureen and a realtime face, side-by-side.</figcaption>
+</figure>
