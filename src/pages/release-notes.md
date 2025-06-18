@@ -1,11 +1,19 @@
 # Release Notes
 
-## Version 0.5.6 (2025-06-14)
+## Version 0.5.7 (2025-06-18)
+
+- Nodes with errors show red in the network view.
+- Add Shortcut Trigger node that can react to global keyboard shortcuts.
+- Load Movie node can react to input from the Shortcut Trigger node.
+- Face/Hands/Pose detection/segmentation: recover from MediaPipe crashes
+- Parameter editor: show range indicator for number parameters.
+
+- ## Version 0.5.6 (2025-06-14)
 
 - Disable background throttling in Electron.
 - Add support for OSC bundle messages.
 - Upgrade to Electron 36.4.0, React 19.1.0, Three.js 0.177.0, Tailwind 4.0.3, Vite 6.3.5.
-  
+
 ## Version 0.5.5 (2024-09-20)
 
 - Errors in Mediapipe (Detect Pose, Detect Hands, Detect Face) nodes no longer crash the app.

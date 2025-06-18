@@ -5,9 +5,9 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 function DownloadHeader() {
   let browserPlatform;
   let platformName;
-  let version = "0.5.6";
+  let version = "0.5.7";
   let downloadUrl;
-  const macDownloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment-${version}-universal.dmg`;
+  const macDownloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment-${version}-arm64.dmg`;
   const winDownloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment%20Setup%20${version}.exe`;
 
   return (
@@ -16,7 +16,7 @@ function DownloadHeader() {
         <h1 className="text-2xl">Download Figment</h1>
         <div className="download__wrapper">
           <a className="download__button" href={macDownloadUrl}>
-            Download Figment for Mac
+            Download Figment for Mac (Apple Silicon)
           </a>
         </div>
         <div className="download__wrapper">
