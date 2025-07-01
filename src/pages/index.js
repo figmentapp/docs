@@ -14,13 +14,12 @@ function HomepageHeader() {
         <div className="row align-center">
           <div className="col col-6 text-left">
             <h1 className="text-2xl">
-              Figment makes creative AI{" "}
-              <span className={styles.orange}>fun</span> and{" "}
-              <span className={styles.orange}>accessible</span>.
+              Design, train and interact with{" "}
+              <span className={styles.orange}>AI</span> visually
             </h1>
             <p className="text-lg max-w-40">
-              It gives you the power to experiment and play with the latest
-              tools without getting wrapped up in coding.
+              Figment is a modular, node-based app that lets artists and
+              researchers build custom AI projects without writing code.
             </p>
             <div className="cta__wrapper">
               <a className="cta__button" href="/download/">
@@ -52,10 +51,11 @@ function FeatureVisualToolkit() {
             />
           </div>
           <div className="col col-6">
-            <h2 className="text-2xl">A visual toolkit for images</h2>
+            <h2 className="text-2xl">Build AI workflows visually</h2>
             <p className="text-lg">
-              Load, transform and manipulate images using an intuitive visual
-              interface.
+              Drag nodes for dataset preparation, augmentation, visual
+              processing, and real-time inference onto the canvas to sketch
+              ideas quickly and iterate in seconds.
             </p>
           </div>
         </div>
@@ -70,10 +70,11 @@ function FeatureMachineLearning() {
       <div className="container">
         <div className="row align-center">
           <div className="col col-6">
-            <h2 className="text-2xl">Machine Learning built in</h2>
+            <h2 className="text-2xl">Training & inference built in</h2>
             <p className="text-lg">
-              Use MediaPipe for pose or face detection, or bring your own
-              Tensorflow.js models and run them in realtime.
+              Use pre-made MediaPipe models or bring your own TensorFlow.js and
+              ONNX models. Train, fine-tune and run them live with minimal
+              latency.
             </p>
           </div>
           <div className="col col-6">
@@ -101,12 +102,36 @@ function FeatureFast() {
             />
           </div>
           <div className="col col-6">
-            <h2 className="text-2xl">Fast in many ways</h2>
+            <h2 className="text-2xl">Optimised for realtime</h2>
             <p className="text-lg">
-              Not only is Figment easy to get started, but all functionality is
-              built as hardware accelerated image filters, fully utilizing the
-              power of the graphics card for realtime processing.
+              Every node is GPU-accelerated for ultra-low latency. Connect
+              Figment to Ableton Live or any OSC-compatible software for
+              responsive performances and long-running installations.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeatureCoding() {
+  return (
+    <section className="homepage__feature section-light">
+      <div className="container">
+        <div className="row align-center">
+          <div className="col col-6">
+            <h2 className="text-2xl">Extend Figment with code</h2>
+            <p className="text-lg">
+              Go under the hood and build custom nodes that extend Figment's
+              functionality. Use Chrome's handy DevTools to debug issues.
+            </p>
+          </div>
+          <div className="col col-6">
+            <img
+              src="/img/homepage/figment-screenshot-coding.png"
+              alt="Screenshot of the Figment app demonstrating coding"
+            />
           </div>
         </div>
       </div>
@@ -167,6 +192,7 @@ export default function Home() {
         <FeatureVisualToolkit />
         <FeatureMachineLearning />
         <FeatureFast />
+        <FeatureCoding />
         <AlgorithmicGaze />
         <Newsletter />
       </main>
