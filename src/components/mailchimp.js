@@ -7,7 +7,7 @@ class Mailchimp extends React.Component {
     return (
       <div id="mc_embed_signup">
         <form
-          action="https://kdg.us4.list-manage.com/subscribe/post?u=4483a7db37e51ca211368a923&amp;id=00e430ba06&amp;f_id=002435eaf0"
+          action="https://kdg.us11.list-manage.com/subscribe/post?u=f2f4dfed688882b52d74c63fb&amp;id=811d41b0b2&amp;f_id=0064e6e0f0"
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
@@ -50,8 +50,9 @@ class Mailchimp extends React.Component {
             >
               <input
                 type="text"
-                name="b_4483a7db37e51ca211368a923_00e430ba06"
-                tabIndex="-1"
+                name="b_f2f4dfed688882b52d74c63fb_811d41b0b2"
+                tabindex="-1"
+                value=""
               />
             </div>
             <div className="clear">
