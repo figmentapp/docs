@@ -63,3 +63,7 @@ A number of handy functions are built in to Figment as well:
 ### Open Sound Control
 
 - `osc(address, defaultValue)` : Returns the value of an OSC address. The second parameter is the default value if no value was received.
+
+### MIDI
+
+- `midi(channel, controller, defaultValue)` : Returns the value of the knob on a MIDI controller. The first parameter is the midi channel; the second parameter is the controller (knob) number. The second parameter is the default value if no value was received. Use [Protokol](https://hexler.net/protokol) to figure out these values.

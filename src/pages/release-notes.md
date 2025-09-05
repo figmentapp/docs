@@ -1,5 +1,9 @@
 # Release Notes
 
+## Version 0.5.8 (2025-09-05)
+
+- Add support for MIDI CC input for realtime control.
+
 ## Version 0.5.7 (2025-06-18)
 
 - Nodes with errors show red in the network view.
