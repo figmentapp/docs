@@ -3,7 +3,7 @@
 By writing a custom JavaScript node you can add brand‑new image‑processing, audio, or data‑generation to any project.
 This guide walks you through the whole workflow – from the UI basics to the final code.
 
-## What a Custom Node Looks Like
+## What a custom node looks like
 
 Every Figment node follows the same scaffold:
 
