@@ -23,7 +23,11 @@ const sidebars = {
     {
       type: "category",
       label: "Tutorials",
-      items: ["tutorials/getting-started", "tutorials/pix2pix"],
+      items: [
+        "tutorials/getting-started",
+        "tutorials/pix2pix",
+        "tutorials/custom-nodes",
+      ],
     },
     {
       type: "category",
