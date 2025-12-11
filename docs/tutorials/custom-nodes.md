@@ -70,32 +70,57 @@ It will output the current image.
  * @category image
  */
 
-const imageIn = node.imageIn('in');
-const latIn = node.numberIn('latitude', 51.26, { min: -90,  max: 90, step: 0.01 });
-const lonIn = node.numberIn('longitude', 4.40, { min: -180,  max: 180, step: 0.01 });
-const intervalIn = node.numberIn('interval', 3, { min: 0.25,  max: 24, step: 0.25 });
-const imageOut = node.imageOut('out');
+const imageIn = node.imageIn("in");
+const latIn = node.numberIn("latitude", 51.26, {
+  min: -90,
+  max: 90,
+  step: 0.01,
+});
+const lonIn = node.numberIn("longitude", 4.4, {
+  min: -180,
+  max: 180,
+  step: 0.01,
+});
+const intervalIn = node.numberIn("interval", 3, {
+  min: 0.25,
+  max: 24,
+  step: 0.25,
+});
+const imageOut = node.imageOut("out");
 
-const DEFAULT_SAT = 0.70;
+const DEFAULT_SAT = 0.7;
 const WMO_SAT = {
-   0: 2.00, // Clear sky
-   1: 0.90, // Mainly clear
-   2: 0.80, // Partly cloudy
-   3: 0.65, // Overcast
-   45: 0.45, 48: 0.45, // Fog / Depositing rime fog
-   51: 0.55, 53: 0.55, 55: 0.55, // Drizzle (light/mod/heavy)
-   56: 0.45, 57: 0.45,           // Freezing drizzle
-   61: 0.50, 63: 0.50, 65: 0.50, // Rain (light/mod/heavy)
-   66: 0.40, 67: 0.40,           // Freezing rain
-   71: 0.55, 73: 0.55, 75: 0.55, // Snow (light/mod/heavy)
-   77: 0.55,                     // Snow grains
-   80: 0.50, 81: 0.50, 82: 0.50, // Rain showers (light/mod/heavy)
-   85: 0.55, 86: 0.55,           // Snow showers (light/heavy)
-   95: 0.35,                     // Thunderstorm
-   96: 0.30, 99: 0.30            // Thunderstorm with hail (slight/heavy)
- };
+  0: 2.0, // Clear sky
+  1: 0.9, // Mainly clear
+  2: 0.8, // Partly cloudy
+  3: 0.65, // Overcast
+  45: 0.45,
+  48: 0.45, // Fog / Depositing rime fog
+  51: 0.55,
+  53: 0.55,
+  55: 0.55, // Drizzle (light/mod/heavy)
+  56: 0.45,
+  57: 0.45, // Freezing drizzle
+  61: 0.5,
+  63: 0.5,
+  65: 0.5, // Rain (light/mod/heavy)
+  66: 0.4,
+  67: 0.4, // Freezing rain
+  71: 0.55,
+  73: 0.55,
+  75: 0.55, // Snow (light/mod/heavy)
+  77: 0.55, // Snow grains
+  80: 0.5,
+  81: 0.5,
+  82: 0.5, // Rain showers (light/mod/heavy)
+  85: 0.55,
+  86: 0.55, // Snow showers (light/heavy)
+  95: 0.35, // Thunderstorm
+  96: 0.3,
+  99: 0.3, // Thunderstorm with hail (slight/heavy)
+};
 
- const fragmentShader = `
+const fragmentShader = `
  precision mediump float;
  uniform sampler2D u_input_texture;
  uniform float u_saturation;
@@ -112,32 +137,32 @@ const WMO_SAT = {
  }
  `;
 
- let _program, _framebuffer;
- let _lastLat, _lastLon, _lastInterval; // This allows us to track changes
- let _timer; // Interval timer
- let _saturation = 0.75;
+let _program, _framebuffer;
+let _lastLat, _lastLon, _lastInterval; // This allows us to track changes
+let _timer; // Interval timer
+let _saturation = 0.75;
 
- node.onStart = async () => {
-   _program = figment.createShaderProgram(fragmentShader);
-   _framebuffer = new figment.Framebuffer();
-   // Fetch immediately, then schedule periodic refreshes.
-   await updateWeather();
-   rescheduleTimer();
- };
+node.onStart = async () => {
+  _program = figment.createShaderProgram(fragmentShader);
+  _framebuffer = new figment.Framebuffer();
+  // Fetch immediately, then schedule periodic refreshes.
+  await updateWeather();
+  rescheduleTimer();
+};
 
- node.onRender = () => {
-   if (!imageIn.value) return;
+node.onRender = () => {
+  if (!imageIn.value) return;
 
-   _framebuffer.setSize(imageIn.value.width, imageIn.value.height);
-   _framebuffer.bind();
-   figment.clear();
-   figment.drawQuad(_program, {
-     u_input_texture: imageIn.value.texture,
-     u_saturation: _saturation,
-   });
-   _framebuffer.unbind();
-   imageOut.set(_framebuffer);
- };
+  _framebuffer.setSize(imageIn.value.width, imageIn.value.height);
+  _framebuffer.bind();
+  figment.clear();
+  figment.drawQuad(_program, {
+    u_input_texture: imageIn.value.texture,
+    u_saturation: _saturation,
+  });
+  _framebuffer.unbind();
+  imageOut.set(_framebuffer);
+};
 
 async function updateWeather() {
   const lat = latIn.value;
@@ -147,7 +172,7 @@ async function updateWeather() {
   if (!res.ok) throw new Error(`Open-Meteo HTTP ${res.status}`);
   const json = await res.json();
   const cw = json && json.current_weather;
-  if (!cw) throw new Error('No current_weather in response');
+  if (!cw) throw new Error("No current_weather in response");
   // cw contains { temperature, windspeed, winddirection, weathercode, time }
   _saturation = WMO_SAT[cw.weathercode] || DEFAULT_SAT;
   console.log("Weather code:", cw.weathercode, "Saturation:", _saturation);
@@ -164,10 +189,9 @@ lonIn.onChange = updateWeather;
 intervalIn.onChange = rescheduleTimer;
 ```
 
-
 ## Get AI Help
 
-We developed a custom GPT that can help you write or debug custom nodes.
+We developed a custom ChatGPT and custom Gemini Gem that can help you write or debug custom nodes:
 
 <a href="https://chatgpt.com/g/g-68d3996b835481918330cb7509368404-figmentgpt" target="\_blank"
 style={{ backgroundColor: '#444444', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0.5rem', padding: '1rem', borderRadius: '0.5rem', width: '300px', color: '#eee', textDecoration: 'none' }}>
@@ -175,7 +199,19 @@ style={{ backgroundColor: '#444444', display: 'flex', flexDirection: 'row', alig
 
    <div style={{ display: 'flex', flexDirection: 'column', rowGap: 0 }}>
     <span style={{ fontSize: '1rem', fontWeight: 600 }}>FigmentGPT</span>
-    <span style={{ fontSize: '0.75rem', fontWeight: 600, opacity: 0.6 }}>by Frederik De Bleser</span>
+    <span style={{ fontSize: '0.75rem', fontWeight: 600, opacity: 0.6 }}>ChatGPT</span>
+  </div>
+</a>
+
+<br/>
+
+<a href="https://gemini.google.com/gem/1GfVUo7C5goh4tB-fNv_TSHigXftFrTt0?usp=sharing" target="\_blank"
+style={{ backgroundColor: '#444444', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0.5rem', padding: '1rem', borderRadius: '0.5rem', width: '300px', color: '#eee', textDecoration: 'none' }}>
+<img src="/img/tutorials/custom-nodes/figment-icon.png" alt="Figment Icon" style={{ borderRadius: '100%', overflow: 'hidden', width: 44, height: 44 }} />
+
+   <div style={{ display: 'flex', flexDirection: 'column', rowGap: 0 }}>
+    <span style={{ fontSize: '1rem', fontWeight: 600 }}>Figment Gem</span>
+    <span style={{ fontSize: '0.75rem', fontWeight: 600, opacity: 0.6 }}>Gemini</span>
   </div>
 </a>
 
