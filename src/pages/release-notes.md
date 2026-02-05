@@ -1,3 +1,9 @@
+---
+title: Release Notes
+description: "What's new in Figment"
+layout: ../layouts/BaseLayout.astro
+---
+
 # Release Notes
 
 ## Version 0.6.3 (2025-12-11)
