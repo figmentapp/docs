@@ -33,6 +33,22 @@ function detectPreferredOption(options) {
   return options[0];
 }
 
+function PlatformIcon({ platform }) {
+  if (platform.toLowerCase().includes("win")) {
+    return (
+      <svg aria-hidden="true" className="download-platform-icon" viewBox="0 0 24 24">
+        <path d="M2.5 3.5 11 2.2V11H2.5V3.5Zm9.7-1.5L21.5.7V11h-9.3V2Zm-9.7 10h8.5v8.8L2.5 19.5V12Zm9.7 0h9.3v10.3l-9.3-1.4V12Z" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg aria-hidden="true" className="download-platform-icon" viewBox="0 0 24 24">
+      <path d="M16.7 12.8c0-2.2 1.8-3.2 1.9-3.3-1-1.5-2.7-1.7-3.2-1.7-1.4-.1-2.7.8-3.4.8-.7 0-1.8-.8-2.9-.8-1.5 0-2.8.9-3.6 2.2-1.6 2.7-.4 6.7 1.2 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.2.9-1.3 1.2-2.6 1.2-2.7-.1 0-2.3-.9-2.3-3.5ZM14.5 6.4c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.7-1.1 1.7-1 2.7 1 .1 2.1-.5 2.7-1.3Z" />
+      </svg>
+    );
+}
+
 function DownloadHeader() {
   const [primaryOption, setPrimaryOption] = useState(downloadOptions[0]);
 
@@ -51,6 +67,7 @@ function DownloadHeader() {
         <h1 className="text-2xl">Download Figment</h1>
 
         <a className="download-primary" href={primaryOption.url}>
+          <PlatformIcon platform={primaryOption.platform} />
           Download Figment for {primaryOption.platform}
         </a>
 
@@ -67,7 +84,10 @@ function DownloadHeader() {
           <div className="download-options-list">
             {alternativeOptions.map((option) => (
               <a className="download-option" href={option.url} key={option.id}>
-                <span className="download-option-title">{option.platform}</span>
+                <span className="download-option-title">
+                  <PlatformIcon platform={option.platform} />
+                  {option.platform}
+                </span>
                 <span className="download-option-meta">{option.variant}</span>
               </a>
             ))}
