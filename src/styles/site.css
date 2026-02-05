@@ -494,6 +494,43 @@ figcaption {
   background: color-mix(in oklch, var(--slate-200) 33%, var(--slate-900));
 }
 
+.content-page {
+  padding: 3.5rem 0 4.25rem;
+}
+
+.prose {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  padding: 2rem clamp(1rem, 3vw, 2.25rem);
+}
+
+.prose h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  letter-spacing: 0.01em;
+}
+
+.prose h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: clamp(1.25rem, 1.4vw, 1.55rem);
+  line-height: 1.25;
+  color: var(--slate-100);
+}
+
+.prose p,
+.prose ul {
+  margin: 0 0 1rem;
+}
+
+.prose ul {
+  padding-left: 1.2rem;
+}
+
+.prose li {
+  margin-bottom: 0.4rem;
+  color: var(--color-text-soft);
+}
+
 .site-footer {
   padding: 3rem 0 2rem;
   border-top: 1px solid var(--color-border-soft);
@@ -660,6 +697,14 @@ figcaption {
 
   .hero {
     padding-top: 4rem;
+  }
+
+  .content-page {
+    padding-top: 2.5rem;
+  }
+
+  .prose {
+    padding: 1.25rem 1rem;
   }
 
   .image-w50 {
