@@ -13,15 +13,29 @@ export default function Mailchimp() {
         noValidate
       >
         <div id="mc_embed_signup_scroll">
-          <h1>Signup for the newsletter</h1>
-          <div className="indicates-required">
-            <span className="asterisk">*</span> indicates required
-          </div>
+          <h1>Join Our Newsletter</h1>
+          <p className="mc-tagline">Stay up to date with the latest developments of Figment.</p>
           <div className="mc-field-group">
-            <label htmlFor="mce-EMAIL">
-              Email Address <span className="asterisk">*</span>
+            <label className="sr-only" htmlFor="mce-EMAIL">
+              Email Address
             </label>
-            <input type="email" name="EMAIL" className="required email" id="mce-EMAIL" required />
+            <input
+              type="email"
+              name="EMAIL"
+              className="required email"
+              id="mce-EMAIL"
+              placeholder="hello@example.com"
+              required
+            />
+          </div>
+          <div className="clear">
+            <input
+              type="submit"
+              name="subscribe"
+              id="mc-embedded-subscribe"
+              className="button"
+              value="Subscribe"
+            />
           </div>
           <div id="mce-responses" className="clear">
             <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
@@ -33,15 +47,6 @@ export default function Mailchimp() {
               name="b_f2f4dfed688882b52d74c63fb_811d41b0b2"
               tabIndex={-1}
               defaultValue=""
-            />
-          </div>
-          <div className="clear">
-            <input
-              type="submit"
-              name="subscribe"
-              id="mc-embedded-subscribe"
-              className="button"
-              value="Subscribe"
             />
           </div>
         </div>
