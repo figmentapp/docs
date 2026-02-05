@@ -1,7 +1,7 @@
 ---
 title: Release Notes
 description: "What's new in Figment"
-layout: ../layouts/BaseLayout.astro
+layout: ../layouts/ContentLayout.astro
 ---
 
 # Release Notes
@@ -58,7 +58,7 @@ layout: ../layouts/BaseLayout.astro
 - Face/Hands/Pose detection/segmentation: recover from MediaPipe crashes
 - Parameter editor: show range indicator for number parameters.
 
-- ## Version 0.5.6 (2025-06-14)
+## Version 0.5.6 (2025-06-14)
 
 - Disable background throttling in Electron.
 - Add support for OSC bundle messages.
