@@ -1,8 +1,8 @@
 .docs-shell {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr) 220px;
+  grid-template-columns: 270px minmax(0, 1fr) 220px;
   gap: 2rem;
-  padding: 2rem 0 4rem;
+  padding: 2rem 0 4.5rem;
 }
 
 .docs-sidebar,
@@ -10,88 +10,127 @@
   position: sticky;
   top: 92px;
   align-self: start;
-  max-height: calc(100vh - 120px);
+  max-height: calc(100vh - 115px);
   overflow: auto;
   padding: 1rem;
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  background: #fbf8ff;
+  background: color-mix(in oklch, var(--color-bg-elevated) 85%, var(--color-bg));
 }
 
 .docs-sidebar h3,
 .docs-toc h3 {
-  margin: 1.25rem 0 0.5rem;
-  font-family: "Space Grotesk", "Source Sans 3", sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.3px;
+  margin: 1.25rem 0 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--ifm-color-primary-darker);
+  letter-spacing: 0.09em;
+  color: var(--color-text-muted);
+}
+
+.docs-sidebar h3:first-of-type,
+.docs-toc h3:first-of-type {
+  margin-top: 0;
 }
 
 .docs-sidebar nav a {
   display: block;
-  margin: 0.25rem 0;
-  padding: 0.3rem 0.5rem;
+  margin: 0.18rem 0;
+  padding: 0.34rem 0.5rem;
   border-radius: 8px;
-  color: var(--color-muted);
+  color: var(--color-text-soft);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.94rem;
 }
 
 .docs-sidebar nav a:hover {
-  color: var(--ifm-color-primary-darkest);
-  background: rgba(78, 52, 99, 0.08);
+  color: var(--slate-50);
+  background: color-mix(in oklch, var(--slate-700) 28%, transparent);
 }
 
 .docs-sidebar nav a.active {
-  color: #fff;
-  background: linear-gradient(135deg, #4e3463 0%, #2e7d5b 100%);
+  color: var(--slate-950);
+  background: var(--slate-200);
+  font-weight: 650;
 }
 
 .docs-content {
   min-width: 0;
 }
 
-.docs-content h1,
-.docs-content h2,
-.docs-content h3 {
-  font-family: "Space Grotesk", "Source Sans 3", sans-serif;
+.docs-content > :is(h1, h2, h3, h4) {
   scroll-margin-top: 110px;
 }
 
 .docs-content h1 {
-  font-size: 2.4rem;
+  font-size: clamp(2.1rem, 3.5vw, 2.8rem);
+  line-height: 1.03;
   margin-bottom: 1rem;
 }
 
 .docs-content h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
+  margin-top: 2.6rem;
+  margin-bottom: 0.72rem;
+  font-size: clamp(1.5rem, 2vw, 1.9rem);
+}
+
+.docs-content h3 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.52rem;
+  font-size: clamp(1.2rem, 1.5vw, 1.42rem);
 }
 
 .docs-content p,
 .docs-content li {
   font-size: 1.05rem;
+  color: var(--color-text-soft);
+}
+
+.docs-content strong {
+  color: var(--slate-100);
+}
+
+.docs-content blockquote {
+  margin: 1.4rem 0;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--slate-400);
+  background: color-mix(in oklch, var(--slate-900) 82%, var(--slate-800));
+  border-radius: 8px;
 }
 
 .docs-content code {
-  padding: 0.1rem 0.3rem;
+  padding: 0.08rem 0.35rem;
   border-radius: 4px;
-  background: #f1edf6;
+  color: var(--slate-100);
+  background: color-mix(in oklch, var(--slate-800) 60%, var(--slate-900));
+}
+
+.docs-content pre {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: color-mix(in oklch, var(--slate-900) 85%, var(--slate-950));
 }
 
 .docs-content pre code {
   display: block;
   padding: 1rem;
   overflow-x: auto;
+  background: transparent;
 }
 
 .docs-content a {
-  color: var(--ifm-color-primary-darker);
+  color: var(--slate-200);
 }
 
 .docs-content a:hover {
-  color: var(--ifm-color-primary-darkest);
+  color: var(--slate-50);
+}
+
+.docs-content img,
+.docs-content video {
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
 }
 
 .docs-toc ul {
@@ -101,17 +140,17 @@
 }
 
 .docs-toc li {
-  margin: 0.4rem 0;
+  margin: 0.42rem 0;
 }
 
 .docs-toc a {
-  color: var(--color-muted);
+  color: var(--color-text-soft);
   text-decoration: none;
   font-size: 0.9rem;
 }
 
 .docs-toc a:hover {
-  color: var(--ifm-color-primary-darkest);
+  color: var(--slate-50);
 }
 
 @media (max-width: 1200px) {
@@ -136,6 +175,6 @@
   }
 
   .docs-content h1 {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 9vw, 2.2rem);
   }
 }
