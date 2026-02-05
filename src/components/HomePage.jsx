@@ -33,7 +33,7 @@ function HomepageHeader() {
 
 function FeatureVisualToolkit() {
   return (
-    <section className="homepage__feature section-tone-1">
+    <section className="homepage__feature homepage__feature--odd">
       <div className="container">
         <div className="row align-center">
           <div className="col col-6">
@@ -57,7 +57,7 @@ function FeatureVisualToolkit() {
 
 function FeatureMachineLearning() {
   return (
-    <section className="homepage__feature section-tone-2">
+    <section className="homepage__feature homepage__feature--even">
       <div className="container">
         <div className="row align-center">
           <div className="col col-6">
@@ -81,7 +81,7 @@ function FeatureMachineLearning() {
 
 function FeatureFast() {
   return (
-    <section className="homepage__feature section-tone-3">
+    <section className="homepage__feature homepage__feature--odd">
       <div className="container">
         <div className="row align-center">
           <div className="col col-6 text-center">
@@ -106,7 +106,7 @@ function FeatureFast() {
 
 function FeatureCoding() {
   return (
-    <section className="homepage__feature section-tone-4">
+    <section className="homepage__feature homepage__feature--even">
       <div className="container">
         <div className="row align-center">
           <div className="col col-6">
@@ -130,7 +130,7 @@ function FeatureCoding() {
 
 function AlgorithmicGaze() {
   return (
-    <section className="homepage__feature section-dark">
+    <section className="homepage__feature homepage__feature--odd">
       <div className="container flex flex-col items-center">
         <figure className="mb-5">
           <img src="/img/homepage/hunger-of-the-pine-cover.jpeg" alt="Hunger of the Pine project" />
@@ -151,7 +151,7 @@ function AlgorithmicGaze() {
 
 function Newsletter() {
   return (
-    <section className="homepage__feature section-tone-5">
+    <section className="homepage__feature homepage__feature--even">
       <div className="container flex flex-col items-center">
         <p className="text-lg max-w-40 text-center">
           Sign up for the Figment mailing list to get all the latest news about our software and other

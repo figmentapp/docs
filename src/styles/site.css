@@ -233,30 +233,12 @@ main {
   animation-delay: 120ms;
 }
 
-.section-tone-1 {
-  background: color-mix(in oklch, var(--color-bg-soft) 88%, var(--color-bg));
+.homepage__feature--odd {
+  background: color-mix(in oklch, var(--color-bg-soft) 90%, var(--color-bg));
 }
 
-.section-tone-2 {
-  background: color-mix(in oklch, var(--color-bg-soft) 80%, var(--slate-900));
-}
-
-.section-tone-3 {
-  background: color-mix(in oklch, var(--color-bg-soft) 72%, var(--slate-900));
-}
-
-.section-tone-4 {
-  background: color-mix(in oklch, var(--color-bg-soft) 77%, var(--slate-800));
-}
-
-.section-tone-5 {
-  background: color-mix(in oklch, var(--color-bg-soft) 84%, var(--color-bg));
-}
-
-.section-dark {
-  background:
-    radial-gradient(70% 90% at 10% 0%, oklch(0.372 0.044 257.287 / 0.22), transparent 70%),
-    color-mix(in oklch, var(--color-bg) 80%, var(--slate-900));
+.homepage__feature--even {
+  background: color-mix(in oklch, var(--color-bg-soft) 70%, var(--slate-800));
 }
 
 .align-center {
