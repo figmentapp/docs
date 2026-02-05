@@ -1,34 +1,59 @@
 .docs-shell {
   display: grid;
   grid-template-columns: 270px minmax(0, 1fr) 220px;
-  gap: 2rem;
-  padding: 2rem 0 4.5rem;
+  gap: 2.25rem;
+  padding: 1.3rem 0 4.5rem;
 }
 
 .docs-sidebar,
 .docs-toc {
   position: sticky;
-  top: 92px;
+  top: 74px;
   align-self: start;
-  max-height: calc(100vh - 115px);
+  max-height: calc(100vh - 90px);
   overflow: auto;
-  padding: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  background: color-mix(in oklch, var(--color-bg-elevated) 85%, var(--color-bg));
+  padding: 1.2rem 1rem 1.1rem 1.2rem;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.docs-sidebar::before,
+.docs-toc::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--slate-500) 60%, transparent) 0%,
+    color-mix(in oklch, var(--slate-700) 35%, transparent) 100%
+  );
+}
+
+.docs-sidebar::before {
+  right: 0;
+}
+
+.docs-toc::before {
+  left: 0;
+}
+
+.docs-toc {
+  padding-top: 0.75rem;
 }
 
 .docs-sidebar h3,
 .docs-toc h3 {
-  margin: 1.25rem 0 0.55rem;
-  font-size: 0.78rem;
+  margin: 1.55rem 0 0.55rem;
+  font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
   color: var(--color-text-muted);
 }
 
-.docs-sidebar h3:first-of-type,
 .docs-toc h3:first-of-type {
   margin-top: 0;
 }
@@ -36,34 +61,40 @@
 .docs-sidebar nav a {
   display: block;
   margin: 0.18rem 0;
-  padding: 0.34rem 0.5rem;
-  border-radius: 8px;
+  padding: 0.38rem 0.62rem;
+  border-radius: 4px;
   color: var(--color-text-soft);
   text-decoration: none;
   font-size: 0.94rem;
+  transition: background-color 140ms ease, color 140ms ease;
 }
 
 .docs-sidebar nav a:hover {
-  color: var(--slate-50);
-  background: color-mix(in oklch, var(--slate-700) 28%, transparent);
+  color: var(--slate-100);
+  background: color-mix(in oklch, var(--slate-800) 72%, transparent);
 }
 
 .docs-sidebar nav a.active {
-  color: var(--slate-950);
-  background: var(--slate-200);
-  font-weight: 650;
+  color: var(--slate-50);
+  background: color-mix(in oklch, var(--slate-800) 86%, var(--slate-700));
+  font-weight: 600;
 }
 
 .docs-content {
   min-width: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .docs-content > :is(h1, h2, h3, h4) {
-  scroll-margin-top: 110px;
+  scroll-margin-top: 105px;
 }
 
 .docs-content h1 {
-  font-size: clamp(2.1rem, 3.5vw, 2.8rem);
+  font-size: clamp(1.8rem, 2.65vw, 2.3rem);
   line-height: 1.03;
   margin-bottom: 1rem;
 }
@@ -123,7 +154,7 @@
 }
 
 .docs-content a:hover {
-  color: var(--slate-50);
+  color: var(--slate-100);
 }
 
 .docs-content img,
@@ -150,7 +181,7 @@
 }
 
 .docs-toc a:hover {
-  color: var(--slate-50);
+  color: var(--slate-100);
 }
 
 @media (max-width: 1200px) {
@@ -166,6 +197,7 @@
 @media (max-width: 900px) {
   .docs-shell {
     grid-template-columns: 1fr;
+    padding-top: 1rem;
   }
 
   .docs-sidebar,
@@ -175,6 +207,6 @@
   }
 
   .docs-content h1 {
-    font-size: clamp(1.8rem, 9vw, 2.2rem);
+    font-size: clamp(1.55rem, 7.5vw, 1.95rem);
   }
 }

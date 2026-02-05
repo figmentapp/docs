@@ -218,7 +218,6 @@ main {
 
 .homepage__feature {
   padding: 4.25rem 0;
-  border-bottom: 1px solid var(--color-border-soft);
   animation: reveal-up 600ms ease both;
 }
 
@@ -230,12 +229,30 @@ main {
   animation-delay: 120ms;
 }
 
-.section-light {
-  background: color-mix(in oklch, var(--color-bg-soft) 85%, var(--color-bg));
+.section-tone-1 {
+  background: color-mix(in oklch, var(--color-bg-soft) 88%, var(--color-bg));
+}
+
+.section-tone-2 {
+  background: color-mix(in oklch, var(--color-bg-soft) 80%, var(--slate-900));
+}
+
+.section-tone-3 {
+  background: color-mix(in oklch, var(--color-bg-soft) 72%, var(--slate-900));
+}
+
+.section-tone-4 {
+  background: color-mix(in oklch, var(--color-bg-soft) 77%, var(--slate-800));
+}
+
+.section-tone-5 {
+  background: color-mix(in oklch, var(--color-bg-soft) 84%, var(--color-bg));
 }
 
 .section-dark {
-  background: color-mix(in oklch, var(--color-bg) 82%, var(--slate-900));
+  background:
+    radial-gradient(70% 90% at 10% 0%, oklch(0.372 0.044 257.287 / 0.22), transparent 70%),
+    color-mix(in oklch, var(--color-bg) 80%, var(--slate-900));
 }
 
 .align-center {
@@ -279,33 +296,120 @@ a.cta__button:hover {
   transform: translateY(-1px);
 }
 
-.download__wrapper {
-  margin-bottom: 0.7rem;
+.download-hero {
+  max-width: 780px;
 }
 
-.download__button {
-  text-align: center;
-  color: var(--color-text);
-  background: color-mix(in oklch, var(--slate-100) 18%, var(--slate-900));
-  display: inline-block;
-  white-space: nowrap;
-  width: auto;
-  font-size: 0.88rem;
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  line-height: 1.2;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0.88rem 1.45rem;
+.download-primary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: min(620px, 100%);
+  margin: 0 auto;
+  padding: 0.94rem 1.55rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklch, var(--slate-200) 75%, var(--slate-400));
+  background: color-mix(in oklch, var(--slate-200) 75%, var(--slate-700));
+  box-shadow: 0 18px 30px rgb(2 6 23 / 0.34);
+  color: var(--slate-900);
+  font-size: clamp(1rem, 1.25vw + 0.7rem, 1.5rem);
   font-weight: 700;
-  transition: all 200ms ease;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
 }
 
-.download__button:hover {
+.download-primary:hover {
   text-decoration: none;
-  background: color-mix(in oklch, var(--slate-200) 28%, var(--slate-900));
+  color: var(--slate-950);
+  background: color-mix(in oklch, var(--slate-100) 82%, var(--slate-600));
+  transform: translateY(-1px);
+}
+
+.download-primary-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0 1.3rem;
+  color: var(--slate-200);
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.download-primary-separator {
+  color: var(--slate-500);
+}
+
+.download-options {
+  width: min(620px, 100%);
+  margin: 0 auto 1.2rem;
+}
+
+.download-options summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: color-mix(in oklch, var(--slate-900) 88%, var(--slate-800));
+  color: var(--slate-100);
+  font-weight: 650;
+  font-size: 1.02rem;
+}
+
+.download-options summary::after {
+  content: "\25be";
+  color: var(--slate-300);
+  transition: transform 180ms ease;
+}
+
+.download-options[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.download-options summary::-webkit-details-marker {
+  display: none;
+}
+
+.download-options-list {
+  margin-top: 0.5rem;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 12px;
+  overflow: hidden;
+  background: color-mix(in oklch, var(--slate-900) 83%, var(--slate-800));
+  box-shadow: var(--shadow-soft);
+}
+
+.download-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  color: var(--slate-200);
+}
+
+.download-option + .download-option {
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.download-option:hover {
+  text-decoration: none;
   color: var(--slate-50);
+  background: color-mix(in oklch, var(--slate-800) 85%, transparent);
+}
+
+.download-option-title {
+  font-weight: 650;
+}
+
+.download-option-meta {
+  color: var(--color-text-muted);
 }
 
 a.color-reverse {
@@ -528,8 +632,12 @@ figcaption {
   }
 
   .cta__button,
-  .download__button,
+  .download-primary,
   .button {
+    transition: none;
+  }
+
+  .download-options summary::after {
     transition: none;
   }
 }
@@ -560,6 +668,21 @@ figcaption {
 
   .text-2xl {
     font-size: clamp(1.9rem, 11vw, 2.6rem);
+  }
+
+  .download-primary {
+    font-size: 1rem;
+    padding: 0.82rem 1rem;
+  }
+
+  .download-primary-meta {
+    font-size: 0.95rem;
+  }
+
+  .download-option {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
   }
 
   #mc_embed_signup .mc-field-group {

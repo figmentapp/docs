@@ -33,7 +33,7 @@ function HomepageHeader() {
 
 function FeatureVisualToolkit() {
   return (
-    <section className="homepage__feature section-light">
+    <section className="homepage__feature section-tone-1">
       <div className="container">
         <div className="row align-center">
           <div className="col col-6">
@@ -57,7 +57,7 @@ function FeatureVisualToolkit() {
 
 function FeatureMachineLearning() {
   return (
-    <section className="homepage__feature section-light">
+    <section className="homepage__feature section-tone-2">
       <div className="container">
         <div className="row align-center">
           <div className="col col-6">
@@ -81,14 +81,14 @@ function FeatureMachineLearning() {
 
 function FeatureFast() {
   return (
-    <section className="homepage__feature section-light">
+    <section className="homepage__feature section-tone-3">
       <div className="container">
         <div className="row align-center">
           <div className="col col-6 text-center">
             <img
               className="image-w50"
               src="/img/homepage/logos.svg"
-              alt="Screenshot of the Figment app demonstrating face detection"
+              alt="Technology logos used by Figment"
             />
           </div>
           <div className="col col-6">
@@ -106,7 +106,7 @@ function FeatureFast() {
 
 function FeatureCoding() {
   return (
-    <section className="homepage__feature section-light">
+    <section className="homepage__feature section-tone-4">
       <div className="container">
         <div className="row align-center">
           <div className="col col-6">
@@ -151,7 +151,7 @@ function AlgorithmicGaze() {
 
 function Newsletter() {
   return (
-    <section className="homepage__feature section-light">
+    <section className="homepage__feature section-tone-5">
       <div className="container flex flex-col items-center">
         <p className="text-lg max-w-40 text-center">
           Sign up for the Figment mailing list to get all the latest news about our software and other

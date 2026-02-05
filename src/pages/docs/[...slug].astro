@@ -29,14 +29,9 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props
-const allDocs = await getCollection('docs')
 const { Content, headings } = await render(entry)
 
 const currentPath = toDocPath(entry.slug)
-
-const nodes = allDocs
-  .filter((doc) => doc.slug.startsWith('nodes/') && doc.slug !== 'nodes/index')
-  .sort((a, b) => a.data.title.localeCompare(b.data.title))
 
 const docsTitle = entry.data.title
 ---
@@ -52,21 +47,13 @@ const docsTitle = entry.data.title
         <a class:list={{ active: currentPath === '/docs/tutorials/pix2pix' }} href="/docs/tutorials/pix2pix">Pix2Pix</a>
         <a class:list={{ active: currentPath === '/docs/tutorials/custom-nodes' }} href="/docs/tutorials/custom-nodes">Custom Nodes</a>
 
-        <h3>Nodes</h3>
-        <a class:list={{ active: currentPath === '/docs/nodes' }} href="/docs/nodes">Overview</a>
-        {nodes.map((node) => {
-          const href = toDocPath(node.slug)
-          return (
-            <a class:list={{ active: currentPath === href }} href={href}>
-              {node.data.title}
-            </a>
-          )
-        })}
-
         <h3>Guides</h3>
         <a class:list={{ active: currentPath === '/docs/expressions' }} href="/docs/expressions">Expressions</a>
         <a class:list={{ active: currentPath === '/docs/structuring' }} href="/docs/structuring">Structuring</a>
         <a class:list={{ active: currentPath === '/docs/export' }} href="/docs/export">Export</a>
+
+        <h3>Reference</h3>
+        <a class:list={{ active: currentPath === '/docs/nodes' }} href="/docs/nodes">Nodes Reference</a>
       </nav>
     </aside>
 

@@ -1,26 +1,81 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
+
+const version = "0.6.3";
+
+const downloadOptions = [
+  {
+    id: "macos-apple-silicon",
+    platform: "macOS",
+    variant: "Apple Silicon",
+    url: `https://figmentapp.s3.amazonaws.com/releases/Figment-${version}-arm64.dmg`,
+  },
+  {
+    id: "windows-installer",
+    platform: "Windows",
+    variant: "Installer",
+    url: `https://figmentapp.s3.amazonaws.com/releases/Figment%20Setup%20${version}.exe`,
+  },
+];
+
+function detectPreferredOption(options) {
+  if (typeof navigator === "undefined") return options[0];
+
+  const signature = `${navigator.userAgentData?.platform ?? ""} ${navigator.platform ?? ""} ${navigator.userAgent ?? ""}`.toLowerCase();
+
+  if (signature.includes("win")) {
+    return options.find((option) => option.id.startsWith("windows")) ?? options[0];
+  }
+
+  if (signature.includes("mac")) {
+    return options.find((option) => option.id.startsWith("macos")) ?? options[0];
+  }
+
+  return options[0];
+}
 
 function DownloadHeader() {
-  const version = "0.6.3";
-  const macDownloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment-${version}-arm64.dmg`;
-  const winDownloadUrl = `https://figmentapp.s3.amazonaws.com/releases/Figment%20Setup%20${version}.exe`;
+  const [primaryOption, setPrimaryOption] = useState(downloadOptions[0]);
+
+  useEffect(() => {
+    setPrimaryOption(detectPreferredOption(downloadOptions));
+  }, []);
+
+  const alternativeOptions = useMemo(
+    () => downloadOptions.filter((option) => option.id !== primaryOption.id),
+    [primaryOption.id],
+  );
 
   return (
     <header className="hero hero--primary">
-      <div className="container text-center">
+      <div className="container text-center download-hero">
         <h1 className="text-2xl">Download Figment</h1>
-        <div className="download__wrapper">
-          <a className="download__button" href={macDownloadUrl}>
-            Download Figment for Mac (Apple Silicon)
-          </a>
-        </div>
-        <div className="download__wrapper">
-          <a className="download__button" href={winDownloadUrl}>
-            Download Figment for Windows
-          </a>
-        </div>
+
+        <a className="download-primary" href={primaryOption.url}>
+          Download Figment for {primaryOption.platform}
+        </a>
+
+        <p className="download-primary-meta">
+          <span>{primaryOption.platform}</span>
+          <span className="download-primary-separator">|</span>
+          <span>{primaryOption.variant}</span>
+          <span className="download-primary-separator">|</span>
+          <span>v{version}</span>
+        </p>
+
+        <details className="download-options">
+          <summary>Other versions</summary>
+          <div className="download-options-list">
+            {alternativeOptions.map((option) => (
+              <a className="download-option" href={option.url} key={option.id}>
+                <span className="download-option-title">{option.platform}</span>
+                <span className="download-option-meta">{option.variant}</span>
+              </a>
+            ))}
+          </div>
+        </details>
+
         <p className="text-sm">
-          Version {version} —{" "}
+          Version {version} -{" "}
           <a className="color-reverse" href="/release-notes">
             What's New
           </a>
